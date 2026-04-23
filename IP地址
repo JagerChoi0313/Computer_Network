@@ -1,0 +1,40 @@
+//java.net.*包下提供了网络编程的解决方案
+
+//基本通信架构两种形式：CS架构（Client客户端/Server服务端）  BS架构（Browser浏览器/Server服务端）
+//无论是CS架构还是BS架构都得以来网络编程
+
+
+//网络通信的三要素：IP地址，端口号，协议
+
+/*IP地址：（Internet Protocol） 全称“互联网协议地址”，是分配给上网的唯一标志，设备在网络中的地址，是唯一标识
+IP地址的两种形式：IPv4，IPv6
+IPv4：32bit，点分十进制表示法
+
+IPv6分成八段表示，每段每四位编码成一个十六进制位的地址，数之间用冒号分开
+dns服务器，又叫域名解析器
+电脑先将网址发给dns服务器，服务器返回一个IP地址
+电脑再通过这个IP地址访问网址的服务器，服务器再返回网址的效果
+
+公网IP：是可以连接互联网的IP地址
+内网IP：也叫局域IP，只能组织机构使用
+
+192.168.开头的就是常见的局域网地址，范围即为192.168.0.0 -- 192.168.255.255，专门为组织机构内部使用
+特殊IP地址：127.0.0.1，localhost:代表本机IP，只会寻找当前所在的主机
+
+InetAddress代表IP地址
+InetAddress的常用方法如下：
+public static InetAddress getLocalHost()        获取本机IP会以一个inetAddress的对象返回
+public static InetAddress getByName(String host)        根据IP地址或者域名，返回一个inetAddress对象
+public String getHostName       获取该IP地址对象的主机名
+public String getHostAddress        获取该ip地址对象中的ip地址信息
+public boolean isReachable(int timeout)         在指定毫秒内，判断主机与该ip地址对应的主机是否能连通
+
+*/
+
+
+ip常用命令：
+ipconfig:查看本机ip地址
+ping IP地址:检查网络是否连通
+
+//端口号：应用程序在设备中的唯一标识
+//协议：连接和数据在网络传输中的规则
