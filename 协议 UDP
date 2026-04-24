@@ -8,3 +8,25 @@ TCP（Transmission Control Protocol）:传输控制协议
 UDP协议：无连接，不可靠通信
 不事先建立连接，数据之间按照爆发，一包数据包含：自己的IP，程序端口，目的地IP，程序端口和数据（限制在64kb）
 发送方不管对方是否在线，数据在中间丢失也不管，如果接收方接收到数据也不返回确认，故是不可靠
+
+Java提供了一个java.net.DataGramSocket类来实现UDP通信
+
+DataGramSocket：用于创建客户端和服务端
+
+构造器：public DataGramSocket   说明：创建客户端的Socket对象，系统会随机分配一个端口号
+构造器：public DataGramSocket(int port)  说明：创建服务端的Socket对象，并指定端口号
+
+方法：public void send(DataGramPacket dp)   说明：发送数据包
+方法：public void receive(DataGramSocket p) 说明：使用数据包接收数据
+
+
+DataGramPacket:创建数据包
+构造器：public DataGramPacket(byte[],buf[],int length,InetAddress,address,int port)
+说明：创建发出去的数据包对象
+
+构造器：public DatagramPacket(byte[] buf,int length)
+说明：创建用来接收数据的数据包
+
+方法：public int getLength()
+说明：获取数据包，实际接收到的字节个数
+
