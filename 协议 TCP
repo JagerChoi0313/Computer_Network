@@ -23,3 +23,9 @@ public OutputStream getOutputStream()
 
 public InputStream getInputStream()
 获得字节输入流对象
+
+
+
+服务端是通过java.net包下的ServerSocket类来实现的
+public ServerSocket (int port)  为服务端程序注册端口
+public Socket accept()      阻塞等待客户端的连接器请求，一旦与某个客户端成功连接，则返回服务端这边的Socket
