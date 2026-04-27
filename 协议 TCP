@@ -7,3 +7,19 @@ TCP主要有三个主要的步骤实现可靠的传输：
 1，三次握手建立连接
 2，传输数据进行确认
 3，四次挥手断开连接
+
+Java提供了一个java.net.socket类来实现TCP通信
+需要到端口和IP地址
+建立端到端的通信管道
+
+TCP通信之客户端开发
+客户端程序就是通过java.net包下的Socket实现的
+
+public Socket(String host,int port)
+根据服务器IP，端口号请求与服务器建立连接，连接通过，就获得了客户端的Socket
+
+public OutputStream getOutputStream()
+获得字节输出流对象
+
+public InputStream getInputStream()
+获得字节输入流对象
