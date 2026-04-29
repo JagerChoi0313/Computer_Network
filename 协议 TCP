@@ -29,3 +29,12 @@ public InputStream getInputStream()
 服务端是通过java.net包下的ServerSocket类来实现的
 public ServerSocket (int port)  为服务端程序注册端口
 public Socket accept()      阻塞等待客户端的连接器请求，一旦与某个客户端成功连接，则返回服务端这边的Socket
+
+
+TCP通信--支持与多个客户端同时通信
+
+服务端
+主线程：负责接收客户端连接
+主线程每接到一个socket连接之后，就得到了socket的通信管道
+主线程就马上创建出一个新的子线程，由这个子线程专门负责这个通信管道的通信
+
